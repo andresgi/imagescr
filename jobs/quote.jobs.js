@@ -5,11 +5,11 @@ var DomParser = require('dom-parser');
 const path = require('path');
 var AWS = require('aws-sdk');
 
-cron.schedule('* * * * *', () => {
+cron.schedule('15 14 1 * *', () => {
   Quote.findOneAndUpdate({ dateImageGen: null, datePub: null }, { $set: { isNext: true } }, { new: true }, function (err, quote) {
     if (err) return err;
     if(quote != null){
-      console.log(quote.length);
+      console.log(quote);
       var toScrape = quote._id;
       console.log(toScrape);
       //configuring the AWS environment
