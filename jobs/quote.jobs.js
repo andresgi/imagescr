@@ -24,7 +24,7 @@ cron.schedule('15 14 1 * *', () => {
         await page.on('onResourceRequested', function (requestData) {
           //console.info('Requesting', requestData.url);
         });
-        const status = await page.open('https://imagegen.surge.sh/');
+        const status = await page.open('https://hopeful-morse-c2f501.netlify.com/');
         const content = await page.property('content');
 
         const parser = new DomParser();
